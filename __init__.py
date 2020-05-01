@@ -33,10 +33,10 @@ class LampiSkill(MycroftSkill):
     def handle_set_hue_intent(self, message):
         try:
             if self.uid and self.gid:
-                subprocess.Popen('echo test success',
+                subprocess.Popen(['echo', 'test success'],
                                  preexec_fn=set_user(self.uid, self.gid))
             else:
-                subprocess.Popen('echo test no user')
+                subprocess.Popen(['echo', 'test success no user'])
         except Exception:
                 self.speak_dialog("hello world")
 
