@@ -77,7 +77,7 @@ class LampiSkill(MycroftSkill):
                 subprocess.Popen(['echo', 'test success'],
                                  preexec_fn=set_user(self.uid, self.gid))
             else:
-                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--on')
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--on'])
         except Exception:
                 self.speak_dialog("Error")
                                   
@@ -90,7 +90,7 @@ class LampiSkill(MycroftSkill):
                 subprocess.Popen(['echo', 'test success'],
                                  preexec_fn=set_user(self.uid, self.gid))
             else:
-                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--off')
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--off'])
         except Exception:
                 self.speak_dialog("Error")
 
