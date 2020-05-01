@@ -68,8 +68,8 @@ class LampiSkill(MycroftSkill):
         except Exception:
                 self.speak_dialog("Error")
                 
-    @intent_handler(IntentBuilder('SetOnIntent').require('SetOn'))
-    def handle_set_on_intent(self, message):
+    @intent_handler(IntentBuilder('TurnOnIntent').require('TurnOn'))
+    def handle_turn_on_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
@@ -81,8 +81,8 @@ class LampiSkill(MycroftSkill):
         except Exception:
                 self.speak_dialog("Error")
                                   
-    @intent_handler(IntentBuilder('SetOffIntent').require('SetOff'))
-    def handle_set_off_intent(self, message):
+    @intent_handler(IntentBuilder('TurnOffIntent').require('TurnOff'))
+    def handle_turn_off_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
