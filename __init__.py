@@ -40,7 +40,59 @@ class LampiSkill(MycroftSkill):
             else:
                 subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--hue', utter[2]])
         except Exception:
-                self.speak_dialog("hello world")
+                self.speak_dialog("Error")
+                
+    @intent_handler(IntentBuilder('SetSatIntent').require('SetSat'))
+    def handle_set_hue_intent(self, message):
+        utter = message.data.get('utterance').lower()
+        utter = utter.split(' ')
+        try:
+            if self.uid and self.gid:
+                subprocess.Popen(['echo', 'test success'],
+                                 preexec_fn=set_user(self.uid, self.gid))
+            else:
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--saturation', utter[2]])
+        except Exception:
+                self.speak_dialog("Error")             
+     
+    @intent_handler(IntentBuilder('SetBrightnessIntent').require('SetBrighness'))
+    def handle_set_hue_intent(self, message):
+        utter = message.data.get('utterance').lower()
+        utter = utter.split(' ')
+        try:
+            if self.uid and self.gid:
+                subprocess.Popen(['echo', 'test success'],
+                                 preexec_fn=set_user(self.uid, self.gid))
+            else:
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--brightness', utter[2]])
+        except Exception:
+                self.speak_dialog("Error")
+                
+    @intent_handler(IntentBuilder('SetOnIntent').require('SetOn'))
+    def handle_set_hue_intent(self, message):
+        utter = message.data.get('utterance').lower()
+        utter = utter.split(' ')
+        try:
+            if self.uid and self.gid:
+                subprocess.Popen(['echo', 'test success'],
+                                 preexec_fn=set_user(self.uid, self.gid))
+            else:
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--on')
+        except Exception:
+                self.speak_dialog("Error")
+                                  
+    @intent_handler(IntentBuilder('SetOffIntent').require('SetOff'))
+    def handle_set_hue_intent(self, message):
+        utter = message.data.get('utterance').lower()
+        utter = utter.split(' ')
+        try:
+            if self.uid and self.gid:
+                subprocess.Popen(['echo', 'test success'],
+                                 preexec_fn=set_user(self.uid, self.gid))
+            else:
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--off')
+        except Exception:
+                self.speak_dialog("Error")
 
     def stop(self):
         pass
