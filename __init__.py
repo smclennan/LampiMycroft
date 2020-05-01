@@ -17,7 +17,7 @@ class LampiSkill(MycroftSkill):
     def __init__(self):
         super().__init__()
         self.learning = True
-	self.uid = None
+        self.uid = None
         self.gid = None
 
     def initialize(self):
