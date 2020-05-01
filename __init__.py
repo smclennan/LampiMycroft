@@ -22,7 +22,7 @@ class LampiSkill(MycroftSkill):
 
     def initialize(self):
         my_setting = self.settings.get('my_setting')
-	user = self.get_config('user')
+        user = self.get_config('user')
         if user:
             pwnam = getpwnam(user)
             self.uid = pwnam.pw_uid
