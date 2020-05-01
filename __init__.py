@@ -38,7 +38,7 @@ class LampiSkill(MycroftSkill):
             else:
                 subprocess.Popen('echo test no user')
         except Exception:
-	    self.speak_dialog("hello world")
+                self.speak_dialog("hello world")
 
     def stop(self):
         pass
