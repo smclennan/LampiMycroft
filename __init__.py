@@ -55,7 +55,7 @@ class LampiSkill(MycroftSkill):
         except Exception:
                 self.speak_dialog("Error")             
      
-    @intent_handler(IntentBuilder('SetBrightnessIntent').require('SetBrighness'))
+    @intent_handler(IntentBuilder('SetBrightnessIntent').require('SetBrightness'))
     def handle_set_brightness_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
