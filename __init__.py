@@ -7,8 +7,8 @@ from mycroft import MycroftSkill, intent_handler
 
 class LampiSkill(MycroftSkill):
     def set_user(uid, gid):
-    os.setgid(gid)
-    os.setuid(uid)
+        os.setgid(gid)
+        os.setuid(uid)
 
     def get_config(self, key):
         return (self.settings.get(key) or
