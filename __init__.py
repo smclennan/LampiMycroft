@@ -36,7 +36,7 @@ class LampiSkill(MycroftSkill):
                 subprocess.Popen(['echo', 'test success'],
                                  preexec_fn=set_user(self.uid, self.gid))
             else:
-                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd'])
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--hue', '0.5'])
         except Exception:
                 self.speak_dialog("hello world")
 
