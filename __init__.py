@@ -43,7 +43,7 @@ class LampiSkill(MycroftSkill):
                 self.speak_dialog("Error")
                 
     @intent_handler(IntentBuilder('SetSatIntent').require('SetSat'))
-    def handle_set_hue_intent(self, message):
+    def handle_set_sat_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
@@ -56,7 +56,7 @@ class LampiSkill(MycroftSkill):
                 self.speak_dialog("Error")             
      
     @intent_handler(IntentBuilder('SetBrightnessIntent').require('SetBrighness'))
-    def handle_set_hue_intent(self, message):
+    def handle_set_brightness_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
@@ -69,7 +69,7 @@ class LampiSkill(MycroftSkill):
                 self.speak_dialog("Error")
                 
     @intent_handler(IntentBuilder('SetOnIntent').require('SetOn'))
-    def handle_set_hue_intent(self, message):
+    def handle_set_on_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
@@ -82,7 +82,7 @@ class LampiSkill(MycroftSkill):
                 self.speak_dialog("Error")
                                   
     @intent_handler(IntentBuilder('SetOffIntent').require('SetOff'))
-    def handle_set_hue_intent(self, message):
+    def handle_set_off_intent(self, message):
         utter = message.data.get('utterance').lower()
         utter = utter.split(' ')
         try:
