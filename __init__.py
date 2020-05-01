@@ -31,12 +31,14 @@ class LampiSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder('SetHueIntent').require('SetHue'))
     def handle_set_hue_intent(self, message):
+        utter = message.data.get('utterance').lower()
+        utter = uter.split(' ')
         try:
             if self.uid and self.gid:
                 subprocess.Popen(['echo', 'test success'],
                                  preexec_fn=set_user(self.uid, self.gid))
             else:
-                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--hue', '0.5'])
+                subprocess.Popen(['/home/pi/connected-devices/Lampi/lamp_cmd', '--hue', utter[2]])
         except Exception:
                 self.speak_dialog("hello world")
 
