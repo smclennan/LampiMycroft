@@ -12,7 +12,7 @@ class LampiSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder('SetHueIntent').require('SetHue'))
     def handle_set_hue_intent(self, message):
-        self.speak_dialog("test.one")
+        self.speak_dialog(message)
 
     def stop(self):
         pass
